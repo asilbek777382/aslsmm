@@ -3,138 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASL SMM — Telegram bot, veb-sayt va SMM xizmatlari</title>
-<meta name="description" content="ASL SMM jamoasi — Telegram bot yaratish, veb-sayt ishlab chiqish, ijtimoiy tarmoqlarda nakrutka va reklama xizmatlari.">
+<title>ASL SMM — g'oyangizni kod va dizaynga aylantiramiz</title>
+<meta name="description" content="ASL SMM jamoasi — Telegram bot yaratish, veb-sayt ishlab chiqish, ijtimoiy tarmoqlarda ilgarilash va reklama dizayni xizmatlari.">
 
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <canvas id="bg-3d"></canvas>
-<div class="noise-overlay"></div>
+<div class="glow-overlay"></div>
 
 <button id="nav-toggle" class="nav-toggle" aria-label="Menyu">
   <span></span><span></span><span></span>
 </button>
 
-<header class="topbar" id="topbar">
+<header class="topbar">
   <a href="#top" class="brand">ASL<span>SMM</span></a>
-  <nav class="menu" id="menu">
+
+  <nav class="pill-nav" id="menu">
     <a href="#top" class="menu-link active" data-nav>Bosh sahifa</a>
     <a href="#services" class="menu-link" data-nav>Xizmatlar</a>
-    <a href="#social" class="menu-link" data-nav>Ijtimoiy tarmoqlar</a>
+    <a href="#social" class="menu-link" data-nav>Tarmoqlar</a>
     <a href="#contact" class="menu-link" data-nav>Aloqa</a>
   </nav>
+
+  <a href="#contact" class="btn btn-small">Buyurtma</a>
 </header>
 
 <main>
 
   <section id="top" class="hero">
     <div class="hero-inner">
-      <p class="eyebrow" data-reveal>Assalomu alaykum 👋</p>
-      <h1 data-reveal><span class="grad-text">ASL SMM</span> jamoasiga xush kelibsiz</h1>
-      <p class="hero-role" data-reveal>
-        <span id="typewriter"></span><span class="caret">|</span>
-      </p>
+      <span class="kicker" data-reveal>🚀 SMM &amp; Dasturlash agentligi</span>
+      <h1 data-reveal>G'oyangizni <span class="grad-text">kod</span> va <span class="grad-text">dizaynga</span> aylantiramiz</h1>
       <p class="hero-desc" data-reveal>
-        Telegram botdan tortib veb-saytgacha, ijtimoiy tarmoqdagi
-        ilgarilashdan reklama dizayngacha — biznesingiz uchun kerakli
-        raqamli xizmatlarni bir joyda, tez va sifatli qilib beramiz.
+        Telegram bot, veb-sayt, ijtimoiy tarmoqdagi ilgarilash va reklama —
+        biznesingizga kerak bo'lgan raqamli xizmatlarni bitta jamoa
+        bajaradi: tez, sifatli va aniq muddatda.
       </p>
       <div class="hero-actions" data-reveal>
         <a href="#contact" class="btn btn-primary">Buyurtma berish <i class='bx bx-right-arrow-alt'></i></a>
-        <a href="#services" class="btn btn-ghost">Xizmatlarimiz</a>
+        <a href="#services" class="btn btn-outline">Xizmatlarni ko'rish</a>
       </div>
     </div>
-    <div class="scroll-hint" data-reveal><span></span>Pastga tushing</div>
   </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>TELEGRAM BOT ✦ VEB-SAYT ✦ SMM ILGARILASH ✦ REKLAMA DIZAYNI ✦ API ✦ </span>
+      <span>TELEGRAM BOT ✦ VEB-SAYT ✦ SMM ILGARILASH ✦ REKLAMA DIZAYNI ✦ API ✦ </span>
+    </div>
+  </div>
 
   <section id="services" class="section">
     <div class="section-head" data-reveal>
-      <span class="tag">Nima qila olamiz</span>
+      <span class="kicker">Nima qila olamiz</span>
       <h2>Xizmatlarimiz</h2>
     </div>
 
-    <div class="services-grid">
-      <div class="service-card" data-reveal data-tilt data-tilt-max="8">
-        <div class="service-icon"><i class='bx bxl-telegram'></i></div>
-        <h4>Telegram Bot</h4>
-        <p>Buyurtma qabul qilish, avtomatik javob va boshqa jarayonlar uchun har qanday turdagi botlarni tez va sifatli yasab beramiz.</p>
+    <div class="bento">
+      <div class="bento-card bento-big" data-reveal data-tilt data-tilt-max="6">
+        <div class="card-icon icon-pink"><i class='bx bxl-telegram'></i></div>
+        <h3>Telegram Bot</h3>
+        <p>Buyurtma qabul qilish, avtomatik javob va biznes jarayonlarini avtomatlashtiruvchi botlarni tez va sifatli yasab beramiz.</p>
       </div>
-      <div class="service-card" data-reveal data-tilt data-tilt-max="8">
-        <div class="service-icon"><i class='bx bx-code-alt'></i></div>
-        <h4>Veb-sayt</h4>
-        <p>Buyurtmangiz bo'yicha zamonaviy, tez va hamyonbop narxdagi veb-saytlarni ishlab chiqamiz.</p>
+
+      <div class="bento-card" data-reveal data-tilt data-tilt-max="6">
+        <div class="card-icon icon-orange"><i class='bx bx-code-alt'></i></div>
+        <h3>Veb-sayt</h3>
+        <p>Zamonaviy va tez ishlaydigan veb-saytlar.</p>
       </div>
-      <div class="service-card" data-reveal data-tilt data-tilt-max="8">
-        <div class="service-icon"><i class='bx bx-trending-up'></i></div>
-        <h4>Nakrutka xizmati</h4>
-        <p>Ijtimoiy tarmoqlaringiz uchun tez, qulay va sifatli obunachi hamda faollik xizmatlari.</p>
+
+      <div class="bento-card" data-reveal data-tilt data-tilt-max="6">
+        <div class="card-icon icon-pink"><i class='bx bx-trending-up'></i></div>
+        <h3>Nakrutka xizmati</h3>
+        <p>Ijtimoiy tarmoqda tez va sifatli ilgarilash.</p>
       </div>
-      <div class="service-card" data-reveal data-tilt data-tilt-max="8">
-        <div class="service-icon"><i class='bx bx-palette'></i></div>
-        <h4>Reklama xizmati</h4>
-        <p>Video, banner, taklifnoma, vizitka va shunga o'xshash reklama materiallarini yasab beramiz.</p>
+
+      <div class="bento-card" data-reveal data-tilt data-tilt-max="6">
+        <div class="card-icon icon-orange"><i class='bx bx-palette'></i></div>
+        <h3>Reklama xizmati</h3>
+        <p>Video, banner, vizitka va boshqa reklama materiallari.</p>
       </div>
     </div>
   </section>
 
-  <section id="social" class="section section-alt">
+  <section id="social" class="social-band">
     <div class="section-head" data-reveal>
-      <span class="tag">Bizni kuzatib boring</span>
+      <span class="kicker">Bizni kuzatib boring</span>
       <h2>Ijtimoiy tarmoqlarimiz</h2>
     </div>
 
-    <div class="social-grid" data-reveal>
-      <a class="social-card" href="https://t.me/tezkor_bot_savdo" target="_blank" rel="noopener">
-        <i class='bx bxl-telegram'></i>
-        <div>
-          <span class="social-label">Telegram</span>
-          <span class="social-value">@tezkor_bot_savdo</span>
-        </div>
+    <div class="social-row" data-reveal>
+      <a class="social-pill" href="https://t.me/tezkor_bot_savdo" target="_blank" rel="noopener">
+        <i class='bx bxl-telegram'></i> Telegram
       </a>
-      <a class="social-card" href="https://www.instagram.com/asilbek77738/" target="_blank" rel="noopener">
-        <i class='bx bxl-instagram'></i>
-        <div>
-          <span class="social-label">Instagram</span>
-          <span class="social-value">@asilbek77738</span>
-        </div>
+      <a class="social-pill" href="https://www.instagram.com/asilbek77738/" target="_blank" rel="noopener">
+        <i class='bx bxl-instagram'></i> Instagram
       </a>
-      <a class="social-card" href="https://facebook.com/asilbek77738/" target="_blank" rel="noopener">
-        <i class='bx bxl-facebook'></i>
-        <div>
-          <span class="social-label">Facebook</span>
-          <span class="social-value">asilbek77738</span>
-        </div>
+      <a class="social-pill" href="https://facebook.com/asilbek77738/" target="_blank" rel="noopener">
+        <i class='bx bxl-facebook'></i> Facebook
       </a>
-      <a class="social-card" href="https://x.com/asilbek77738/" target="_blank" rel="noopener">
-        <i class='bx bxl-twitter'></i>
-        <div>
-          <span class="social-label">Twitter / X</span>
-          <span class="social-value">@asilbek77738</span>
-        </div>
+      <a class="social-pill" href="https://x.com/asilbek77738/" target="_blank" rel="noopener">
+        <i class='bx bxl-twitter'></i> Twitter / X
       </a>
     </div>
   </section>
 
-  <section id="contact" class="section contact">
-    <div class="section-head" data-reveal>
-      <span class="tag">Aloqa</span>
-      <h2>Biz bilan bog'laning</h2>
-      <p class="section-sub">Loyihangiz haqida gaplashamiz — qo'ng'iroq qiling yoki Telegram orqali yozing.</p>
-    </div>
-
-    <div class="contact-grid" data-reveal>
-      <a class="contact-card" href="tel:+998947377090">
-        <i class='bx bx-phone'></i>
-        <span>+998 94 737 70 90</span>
-      </a>
-      <a class="contact-card" href="https://t.me/asilbek77738" target="_blank" rel="noopener">
-        <i class='bx bxl-telegram'></i>
-        <span>@asilbek77738</span>
-      </a>
+  <section id="contact" class="contact-banner">
+    <span class="kicker" data-reveal>Aloqa</span>
+    <h2 data-reveal>Loyihangiz bormi? <span class="grad-text">Gaplashamiz.</span></h2>
+    <a class="phone-link" href="tel:+998947377090" data-reveal>+998 94 737 70 90</a>
+    <div class="hero-actions" data-reveal>
+      <a href="tel:+998947377090" class="btn btn-primary"><i class='bx bx-phone'></i> Qo'ng'iroq qilish</a>
+      <a href="https://t.me/asilbek77738" target="_blank" rel="noopener" class="btn btn-outline"><i class='bx bxl-telegram'></i> Telegram orqali yozish</a>
     </div>
   </section>
 

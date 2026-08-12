@@ -30,9 +30,11 @@ window.addEventListener('scroll', updateActiveNav, { passive: true });
 updateActiveNav();
 
 const toTop = document.querySelector('.to-top');
-window.addEventListener('scroll', () => {
-  toTop.classList.toggle('visible', window.scrollY > 500);
-}, { passive: true });
+if (toTop) {
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('visible', window.scrollY > 500);
+  }, { passive: true });
+}
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -46,39 +48,6 @@ const observer = new IntersectionObserver(
   { threshold: 0.15 }
 );
 document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
-
-const roles = [
-  'Telegram bot yaratamiz',
-  'Veb-sayt quramiz',
-  'Ijtimoiy tarmoqda ilgarilatamiz',
-  'Reklamangizni dizayn qilamiz',
-];
-const typeEl = document.getElementById('typewriter');
-let roleIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function typeLoop() {
-  const current = roles[roleIndex];
-  if (!deleting) {
-    charIndex++;
-    typeEl.textContent = current.slice(0, charIndex);
-    if (charIndex === current.length) {
-      deleting = true;
-      setTimeout(typeLoop, 1400);
-      return;
-    }
-  } else {
-    charIndex--;
-    typeEl.textContent = current.slice(0, charIndex);
-    if (charIndex === 0) {
-      deleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-    }
-  }
-  setTimeout(typeLoop, deleting ? 40 : 80);
-}
-typeLoop();
 
 if (window.VanillaTilt) {
   VanillaTilt.init(document.querySelectorAll('[data-tilt]'), {
