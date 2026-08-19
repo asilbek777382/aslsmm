@@ -1,0 +1,219 @@
+/* =========================================================================
+   Bozorcha — BOZOR uslubi
+
+   Vizual dunyo bozordan olingan, umumiy "chiroyli sayt" andozasidan emas:
+
+     · chiziqli TENT (bozor rastasi ustidagi soyabon) — bo'lim ajratgichi
+     · BO'R BILAN yozilgan narx taxtachasi — imkoniyatlar kartasi
+     · ziravor ranglari: za'faron, g'isht, ko'kat
+     · qalin siqiq shrift — bozor peshtaxtasidagi yozuv kabi
+
+   ⚠️ Palitra iliq, lekin "krem + serif + terrakota" andozasiga tushmaydi:
+   sarlavhalar SERIF emas, qalin grotesk; urg'u za'faron, terrakota emas.
+   ========================================================================= */
+
+:root {
+  --paper: #FBF6EC;      /* qog'oz xalta */
+  --paper-2: #F3EADA;
+  --surface: #FFFFFF;
+  --line: #E3D6C0;
+  --line-strong: #C9B593;
+
+  --ink: #241A12;        /* qovurilgan qahva */
+  --ink-2: #4E3E30;
+  --ink-soft: #7C6A58;
+
+  --saffron: #E08A1E;    /* za'faron — asosiy urg'u */
+  --saffron-soft: #FBEBD2;
+  --brick: #A83A2B;      /* g'isht — ogohlantirish va qarama-qarshilik */
+  --brick-soft: #F8E4E0;
+  --herb: #4C7A3F;       /* ko'kat — "bor, ishlaydi" */
+  --herb-soft: #E6F0E1;
+
+  --display: "Archivo", "Segoe UI Variable Display", system-ui, sans-serif;
+  --body: "Inter Tight", "Segoe UI Variable Text", system-ui, sans-serif;
+  --mono: "JetBrains Mono", Consolas, ui-monospace, monospace;
+
+  --wrap: 1080px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #17120D;
+    --paper-2: #1F1811;
+    --surface: #221A13;
+    --line: #362A1E;
+    --line-strong: #4E3D2B;
+    --ink: #F6EEE1;
+    --ink-2: #D8C8B4;
+    --ink-soft: #A08D77;
+    --saffron: #F0A945;
+    --saffron-soft: #33240E;
+    --brick: #E07C6A;
+    --brick-soft: #331A15;
+    --herb: #8FBF7F;
+    --herb-soft: #1B2A17;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #17120D; --paper-2: #1F1811; --surface: #221A13;
+  --line: #362A1E; --line-strong: #4E3D2B;
+  --ink: #F6EEE1; --ink-2: #D8C8B4; --ink-soft: #A08D77;
+  --saffron: #F0A945; --saffron-soft: #33240E;
+  --brick: #E07C6A; --brick-soft: #331A15;
+  --herb: #8FBF7F; --herb-soft: #1B2A17;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16.5px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+p { margin: 0; }
+img { max-width: 100%; display: block; }
+
+.wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+
+/* --- TENT: bozor rastasining chizig'li soyaboni ----------------------- */
+/* Bo'limlarni ajratadi. Bezak emas — sahifani rastalarga bo'ladi.        */
+.awning {
+  height: 14px;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--saffron) 0 16px,
+    var(--paper) 16px 32px
+  );
+  border-block: 1px solid var(--line);
+}
+
+/* --- Tipografika ------------------------------------------------------ */
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.04;
+  margin: 0;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(40px, 7vw, 82px); text-transform: uppercase; letter-spacing: -.03em; }
+h2 { font-size: clamp(28px, 4.2vw, 46px); }
+h3 { font-size: clamp(18px, 2vw, 22px); letter-spacing: -.012em; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.lede { font-size: clamp(16.5px, 1.7vw, 19px); color: var(--ink-2); max-width: 58ch; }
+
+/* --- Navigatsiya ------------------------------------------------------ */
+.nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav-in { display: flex; align-items: center; gap: 16px; height: 60px; }
+.brand { display: flex; align-items: center; gap: 9px; text-decoration: none; font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: -.02em; }
+.brand-mark { width: 24px; height: 24px; border-radius: 5px; background: var(--saffron); display: grid; place-items: center; color: #241A12; font-size: 13px; font-weight: 800; flex: none; }
+.nav-links { margin-left: auto; display: flex; gap: 4px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--ink-2); font-size: 14.5px; font-weight: 500; padding: 7px 11px; border-radius: 8px; }
+.nav-links a:hover { background: var(--paper-2); color: var(--ink); }
+@media (max-width: 720px) { .nav-links a.hide-sm { display: none; } }
+
+/* Nav ichidagi tugma — `.nav-links a` (0,1,1) `.btn-primary` (0,1,0) dan
+   kuchli bo'lgani uchun matn rangi yo'qolib, fon bilan qo'shilib ketardi.
+   Shu yerda bir xil kuchdagi aniq qoida bilan qaytariladi. */
+.nav-links a.btn-primary { color: var(--paper); background: var(--ink); }
+.nav-links a.btn-primary:hover { background: var(--brick); color: var(--paper); }
+.nav-links a.btn-ghost { color: var(--ink); background: transparent; }
+
+/* --- Tugmalar --------------------------------------------------------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 22px; border-radius: 10px; font-weight: 700; font-size: 15px; text-decoration: none; border: 2px solid transparent; cursor: pointer; transition: transform .15s ease, background .15s ease; }
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--brick); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+.btn-ghost:hover { border-color: var(--saffron); }
+.btn-row { display: flex; gap: 11px; flex-wrap: wrap; }
+
+section { padding: clamp(52px, 7vw, 92px) 0; }
+.sec-head { max-width: 60ch; margin-bottom: clamp(26px, 4vw, 44px); }
+.sec-head .eyebrow { display: block; margin-bottom: 11px; }
+.sec-head p { margin-top: 13px; }
+
+/* --- NARX TAXTACHASI: bozordagi bo'r bilan yozilgan lavha ------------- */
+/* Yuqorida ip bilan osilgandek teshik va tugun bor.                      */
+.tag {
+  position: relative;
+  background: var(--surface);
+  border: 1.5px solid var(--line-strong);
+  border-radius: 4px 4px 10px 10px;
+  padding: 26px 22px 22px;
+  box-shadow: 3px 3px 0 var(--line);
+}
+.tag::before {
+  content: "";
+  position: absolute; top: 9px; left: 50%; transform: translateX(-50%);
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--paper); border: 1.5px solid var(--line-strong);
+}
+.tag h3 { margin-bottom: 9px; }
+
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+
+/* --- Raqamli rasta: 01 / 02 / 03 ------------------------------------- */
+.stall { display: grid; grid-template-columns: 64px 1fr; gap: 0 20px; align-items: start; }
+.stall + .stall { margin-top: 34px; padding-top: 34px; border-top: 1px dashed var(--line-strong); }
+.stall-no {
+  font-family: var(--display); font-weight: 800; font-size: 44px; line-height: 1;
+  color: var(--saffron); letter-spacing: -.04em;
+}
+@media (max-width: 620px) {
+  .stall { grid-template-columns: 1fr; gap: 10px; }
+  .stall-no { font-size: 34px; }
+}
+
+/* --- Ro'yxat: savat belgisi ------------------------------------------ */
+.ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.ticks li { display: flex; gap: 11px; align-items: flex-start; color: var(--ink-2); }
+.ticks li::before {
+  content: ""; flex: none; width: 9px; height: 9px; margin-top: 9px;
+  background: var(--herb);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.ticks.warn li::before { background: var(--brick); }
+
+/* --- Jadval ----------------------------------------------------------- */
+.table-wrap { overflow-x: auto; border: 1.5px solid var(--line-strong); border-radius: 10px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 500px; }
+th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); background: var(--paper-2); font-weight: 600; }
+tbody tr:last-child td { border-bottom: none; }
+
+.note { border: 1.5px solid var(--line-strong); border-left: 5px solid var(--saffron); background: var(--saffron-soft); border-radius: 8px; padding: 16px 18px; }
+.note strong { display: block; margin-bottom: 5px; }
+
+footer { border-top: 1px solid var(--line); padding: 32px 0 42px; color: var(--ink-soft); font-size: 14px; }
+.foot-in { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+.foot-links { display: flex; gap: 14px; flex-wrap: wrap; }
+.foot-links a { text-decoration: none; color: var(--ink-soft); }
+.foot-links a:hover { color: var(--brick); }
+
+/* Mazmun animatsiyaga BOG'LIQ EMAS — sinf JS tomonidan qo'yiladi */
+.js-reveal [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity .55s ease, transform .55s ease; }
+.js-reveal [data-reveal].in { opacity: 1; transform: none; }
+
+:focus-visible { outline: 3px solid var(--saffron); outline-offset: 2px; border-radius: 5px; }

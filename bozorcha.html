@@ -4,43 +4,53 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Bozorcha — oshxona va do'konlar uchun sotuv dasturi</title>
-<meta name="description" content="Telegram bot, mini-app va o'z saytingiz bitta tizimda. Buyurtma qabul qilish, kuryer kuzatuvi, chek printeri, filiallar va moliya hisoboti." />
-<meta name="theme-color" content="#0F5C4E" />
+<meta name="description" content="Telegram bot, mini-app va o'z saytingiz bitta tizimda. Buyurtma, kassa, chek printeri, kuryer kuzatuvi, filiallar va moliya hisoboti." />
+<meta name="theme-color" content="#E08A1E" />
 
 <meta property="og:title" content="Bozorcha — sotuv dasturi" />
-<meta property="og:description" content="Oshxona va do'konlar uchun to'liq sotuv tizimi: bot, mini-app va sayt." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://aslsmm.uz/bozorcha.html" />
+<meta property="og:description" content="Oshxona, restoran va do'konlar uchun to'liq sotuv tizimi: Telegram bot, mini-app va sayt." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bozorcha.aslsmm.uz/" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/bozor.css?v=202608190917" />
 </head>
 <body>
 
 <nav class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="/"><span class="brand-dot"></span> ASL SMM</a>
+    <a class="brand" href="/"><span class="brand-mark">B</span> Bozorcha</a>
     <div class="nav-links">
-      <a class="hide-sm" href="#nima">Nima bu</a>
       <a class="hide-sm" href="#qismlar">Qismlari</a>
-      <a href="#imkoniyat">Imkoniyatlar</a>
-      <a class="btn btn-primary" style="padding:8px 15px" href="#sotib-olish">Sotib olish</a>
+      <a class="hide-sm" href="#imkoniyat">Imkoniyatlar</a>
+      <a href="#sotib-olish">Narxi</a>
+      <a class="btn btn-primary" style="padding:8px 15px" href="https://t.me/asilbek77738">Yozish</a>
     </div>
   </div>
 </nav>
 
-<section style="padding-top:clamp(40px,6vw,72px)">
+<!-- Tent — rasta soyaboni. Bo'limlarni ajratadi, bezak emas. -->
+<div class="awning"></div>
+
+<!-- ==================================================================== -->
+<!-- HERO                                                                  -->
+<!-- ==================================================================== -->
+<section style="padding-top:clamp(38px,5.5vw,66px)">
   <div class="wrap">
-    <a href="/#proektlar" style="text-decoration:none;color:var(--ink-soft);font-size:14.5px" data-reveal>← Proektlarim</a>
+    <a href="https://aslsmm.uz/#proektlar" data-reveal
+       style="text-decoration:none;color:var(--ink-soft);font-size:14.5px">&larr; Proektlarim</a>
+
     <p class="eyebrow" data-reveal style="margin-top:20px">Sotuv dasturi</p>
-    <h1 data-reveal style="margin:14px 0 20px; max-width:13ch">Bozorcha</h1>
+    <h1 data-reveal style="margin:12px 0 20px">Bozorcha</h1>
+
     <p class="lede" data-reveal>
       Oshxona, restoran va do'konlar uchun to'liq sotuv tizimi. Mijoz Telegramdan
-      yoki saytdan buyurtma beradi — oshxona chekni oladi, kuryer kartada
+      yoki saytdan buyurtma beradi &mdash; oshxona chekni oladi, kuryer kartada
       ko'rinadi, siz esa hamma narsani bir joyda boshqarasiz.
     </p>
+
     <div class="btn-row" data-reveal style="margin-top:26px">
       <a class="btn btn-primary" href="#sotib-olish">Narxini bilish</a>
       <a class="btn btn-ghost" href="#qismlar">Qanday ishlaydi</a>
@@ -48,8 +58,12 @@
   </div>
 </section>
 
-<!-- ================================================================== -->
-<section id="nima" style="background:var(--surface-2);border-block:1px solid var(--line)">
+<div class="awning"></div>
+
+<!-- ==================================================================== -->
+<!-- MUAMMO / YECHIM — ikki taxtacha yonma-yon                             -->
+<!-- ==================================================================== -->
+<section id="nima" style="background:var(--paper-2)">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <span class="eyebrow">Muammo va yechim</span>
@@ -57,9 +71,9 @@
     </div>
 
     <div class="grid g2">
-      <div class="card" data-reveal>
-        <h3 style="color:var(--amber)">Hozir qanday</h3>
-        <ul class="ticks" style="margin-top:12px">
+      <div class="tag" data-reveal>
+        <h3 style="color:var(--brick)">Hozir qanday</h3>
+        <ul class="ticks warn" style="margin-top:12px">
           <li>Buyurtma telefonda qabul qilinadi, xato yozilib qoladi</li>
           <li>Mijoz "buyurtmam qayerda?" deb qayta qo'ng'iroq qiladi</li>
           <li>Kuryer qayerdaligi noma'lum</li>
@@ -67,10 +81,11 @@
           <li>Qaysi taom ko'p sotilgani esda qolmaydi</li>
         </ul>
       </div>
-      <div class="card" data-reveal style="border-color:var(--brand)">
-        <h3 style="color:var(--brand-ink)">Bozorcha bilan</h3>
+
+      <div class="tag" data-reveal style="border-color:var(--herb)">
+        <h3 style="color:var(--herb)">Bozorcha bilan</h3>
         <ul class="ticks" style="margin-top:12px">
-          <li>Mijoz o'zi tanlaydi va o'zi yozadi — xato bo'lmaydi</li>
+          <li>Mijoz o'zi tanlaydi va o'zi yozadi &mdash; xato bo'lmaydi</li>
           <li>Buyurtma holati mijozga o'zi ko'rinib turadi</li>
           <li>Kuryer kartada jonli harakatlanadi</li>
           <li>Hisobot avtomatik, filial bo'yicha ajratilgan</li>
@@ -81,7 +96,12 @@
   </div>
 </section>
 
-<!-- ================================================================== -->
+<div class="awning"></div>
+
+<!-- ==================================================================== -->
+<!-- UCHTA QISMI                                                           -->
+<!-- Raqamlanmagan: bular ketma-ketlik emas, uchta parallel yo'l.          -->
+<!-- ==================================================================== -->
 <section id="qismlar">
   <div class="wrap">
     <div class="sec-head" data-reveal>
@@ -91,80 +111,80 @@
         u hamma joyda bir vaqtda yangilanadi.</p>
     </div>
 
-    <!-- 1 --------------------------------------------------------------- -->
-    <div class="card" data-reveal style="margin-bottom:14px">
-      <span class="eyebrow" style="background:var(--brand-soft);color:var(--brand-ink);padding:4px 9px;border-radius:6px">01</span>
-      <h3 style="margin-top:14px">Telegram bot</h3>
-      <p style="color:var(--ink-2);margin-top:10px">
-        Mijoz hech narsa o'rnatmaydi — botni ochadi va buyurtma beradi. Eng katta
-        ustunligi shu: O'zbekistonda Telegram deyarli hammada bor.
-      </p>
-      <ul class="ticks" style="margin-top:16px">
-        <li>Menyu bo'limlar bilan, har mahsulotning surati va narxi</li>
-        <li>Savat, promokod, bonus va yetkazish narxi — hammasi botda</li>
-        <li>Raqam Telegramning o'zi orqali tasdiqlanadi, SMS kerak emas</li>
-        <li>Buyurtma holati o'zgarganda mijozga xabar keladi</li>
-        <li>Filialni tanlash va eng yaqinini topish</li>
-      </ul>
-    </div>
+    <div class="grid g2">
+      <div class="tag" data-reveal>
+        <h3>Telegram bot</h3>
+        <p style="color:var(--ink-2);margin-top:9px">
+          Mijoz hech narsa o'rnatmaydi &mdash; botni ochadi va buyurtma beradi.
+          O'zbekistonda Telegram deyarli hammada bor.
+        </p>
+        <ul class="ticks" style="margin-top:15px">
+          <li>Menyu bo'limlar bilan, har mahsulotning surati va narxi</li>
+          <li>Savat, promokod, bonus va yetkazish narxi &mdash; hammasi botda</li>
+          <li>Raqam Telegramning o'zi orqali tasdiqlanadi, SMS kerak emas</li>
+          <li>Buyurtma holati o'zgarganda mijozga xabar keladi</li>
+          <li>Filialni tanlash va eng yaqinini topish</li>
+        </ul>
+      </div>
 
-    <!-- 2 --------------------------------------------------------------- -->
-    <div class="card" data-reveal style="margin-bottom:14px">
-      <span class="eyebrow" style="background:var(--brand-soft);color:var(--brand-ink);padding:4px 9px;border-radius:6px">02</span>
-      <h3 style="margin-top:14px">Mini-app — Telegram ichidagi do'kon</h3>
-      <p style="color:var(--ink-2);margin-top:10px">
-        Bot ichida ochiladigan to'liq ilova. Ko'rinishi va tezligi mobil
-        ilovadan farq qilmaydi, lekin mijoz uni yuklab olmaydi.
-      </p>
-      <ul class="ticks" style="margin-top:16px">
-        <li>Rasmli katalog, qidiruv va bo'limlar bo'yicha o'tish</li>
-        <li>Manzilni kartadan belgilash — yetkazish narxi masofaga qarab hisoblanadi</li>
-        <li>Kuryer kartada jonli ko'rinadi, yo'l ko'chalar bo'ylab chiziladi</li>
-        <li>Buyurtma tarixi, bonus balansi va do'stni taklif qilish</li>
-        <li>Beshta dizayn ko'rinishi — do'koningizga mosini tanlaysiz</li>
-      </ul>
-    </div>
+      <div class="tag" data-reveal>
+        <h3>Mini-app &mdash; Telegram ichidagi do'kon</h3>
+        <p style="color:var(--ink-2);margin-top:9px">
+          Bot ichida ochiladigan to'liq ilova. Ko'rinishi va tezligi mobil
+          ilovadan farq qilmaydi, lekin mijoz uni yuklab olmaydi.
+        </p>
+        <ul class="ticks" style="margin-top:15px">
+          <li>Rasmli katalog, qidiruv va bo'limlar bo'yicha o'tish</li>
+          <li>Manzilni kartadan belgilash &mdash; yetkazish narxi masofaga qarab hisoblanadi</li>
+          <li>Kuryer kartada jonli ko'rinadi, yo'l ko'chalar bo'ylab chiziladi</li>
+          <li>Buyurtma tarixi, bonus balansi va do'stni taklif qilish</li>
+          <li>Beshta dizayn ko'rinishi &mdash; do'koningizga mosini tanlaysiz</li>
+        </ul>
+      </div>
 
-    <!-- 3 --------------------------------------------------------------- -->
-    <div class="card" data-reveal>
-      <span class="eyebrow" style="background:var(--brand-soft);color:var(--brand-ink);padding:4px 9px;border-radius:6px">03</span>
-      <h3 style="margin-top:14px">O'z saytingiz</h3>
-      <p style="color:var(--ink-2);margin-top:10px">
-        Telegramdan tashqarida ham savdo qilasiz. O'z domeningizni berasiz
-        (masalan <span style="font-family:var(--mono);font-size:14px">dokonim.uz</span>),
-        sayt o'sha manzilda ochiladi.
-      </p>
-      <ul class="ticks" style="margin-top:16px">
-        <li>Qidiruv tizimlarida topiladi — Telegramda yo'q mijozlar ham keladi</li>
-        <li>Mijoz ro'yxatdan o'tmasdan menyuni ko'ra oladi</li>
-        <li>Buyurtma berishda raqam Telegram orqali tasdiqlanadi</li>
-        <li>Mahsulot havolasini ijtimoiy tarmoqlarda ulashish mumkin</li>
-      </ul>
+      <div class="tag" data-reveal>
+        <h3>O'z saytingiz</h3>
+        <p style="color:var(--ink-2);margin-top:9px">
+          Telegramdan tashqarida ham savdo qilasiz. O'z domeningizni berasiz
+          (masalan <span style="font-family:var(--mono);font-size:14px">dokonim.uz</span>),
+          sayt o'sha manzilda ochiladi.
+        </p>
+        <ul class="ticks" style="margin-top:15px">
+          <li>Qidiruv tizimlarida topiladi &mdash; Telegramda yo'q mijozlar ham keladi</li>
+          <li>Mijoz ro'yxatdan o'tmasdan menyuni ko'ra oladi</li>
+          <li>Buyurtma berishda raqam Telegram orqali tasdiqlanadi</li>
+          <li>Mahsulot havolasini ijtimoiy tarmoqlarda ulashish mumkin</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================================================================== -->
-<section id="imkoniyat" style="background:var(--surface-2);border-block:1px solid var(--line)">
+<div class="awning"></div>
+
+<!-- ==================================================================== -->
+<!-- IMKONIYATLAR                                                          -->
+<!-- ==================================================================== -->
+<section id="imkoniyat" style="background:var(--paper-2)">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <span class="eyebrow">Ichkarida</span>
       <h2>Do'kon egasi nimalarni boshqaradi</h2>
-      <p class="lede">Hammasi brauzerdan — alohida dastur o'rnatish shart emas.</p>
+      <p class="lede">Hammasi brauzerdan &mdash; alohida dastur o'rnatish shart emas.</p>
     </div>
 
     <div class="grid g2">
-      <div class="card" data-reveal>
+      <div class="tag" data-reveal>
         <h3>Menyu va narxlar</h3>
         <ul class="ticks" style="margin-top:12px">
           <li>Bo'limlar, mahsulotlar, suratlar va tavsiflar</li>
-          <li>Chegirma — foizda yoki summada, muddat belgilash bilan</li>
-          <li>Sotuv vaqti: masalan nonushta faqat 08:00–11:00 orasida</li>
+          <li>Chegirma &mdash; foizda yoki summada, muddat belgilash bilan</li>
+          <li>Sotuv vaqti: masalan nonushta faqat 08:00&ndash;11:00 orasida</li>
           <li>Qoldiq hisobi yoki "buyurtmaga tayyorlanadi" rejimi</li>
         </ul>
       </div>
 
-      <div class="card" data-reveal>
+      <div class="tag" data-reveal>
         <h3>Buyurtmalar va kassa</h3>
         <ul class="ticks" style="margin-top:12px">
           <li>Yangi buyurtma darhol ekranda, ovoz bilan</li>
@@ -174,7 +194,7 @@
         </ul>
       </div>
 
-      <div class="card" data-reveal>
+      <div class="tag" data-reveal>
         <h3>Kuryerlar</h3>
         <ul class="ticks" style="margin-top:12px">
           <li>Kuryer telefonidan ishlaydi, yangi buyurtmada telefon jiringlaydi</li>
@@ -185,7 +205,7 @@
         </ul>
       </div>
 
-      <div class="card" data-reveal>
+      <div class="tag" data-reveal>
         <h3>Pul va hisobot</h3>
         <ul class="ticks" style="margin-top:12px">
           <li>Kunlik tushum, tannarx va sof foyda</li>
@@ -199,7 +219,11 @@
   </div>
 </section>
 
-<!-- ================================================================== -->
+<div class="awning"></div>
+
+<!-- ==================================================================== -->
+<!-- BUYURTMA YO'LI — bu HAQIQIY ketma-ketlik, shuning uchun raqamlangan   -->
+<!-- ==================================================================== -->
 <section>
   <div class="wrap">
     <div class="sec-head" data-reveal>
@@ -226,34 +250,46 @@
   </div>
 </section>
 
-<!-- ================================================================== -->
-<section id="sotib-olish" style="background:var(--surface-2);border-block:1px solid var(--line)">
+<div class="awning"></div>
+
+<!-- ==================================================================== -->
+<!-- SOTIB OLISH — bu ham ketma-ketlik, shuning uchun raqamli rastalar     -->
+<!-- ==================================================================== -->
+<section id="sotib-olish" style="background:var(--paper-2)">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <span class="eyebrow">Sotib olish</span>
       <h2>Do'koningizga ulaymiz</h2>
       <p class="lede">
         Narx do'konning hajmiga qarab belgilanadi: nechta filial, kuryer kerakmi,
-        o'z domeningiz bo'ladimi. Aniq raqamni gaplashib chiqamiz — avval
+        o'z domeningiz bo'ladimi. Aniq raqamni gaplashib chiqamiz &mdash; avval
         ehtiyojingizni bilib olaman.
       </p>
     </div>
 
-    <div class="grid g3" data-reveal style="margin-bottom:26px">
-      <div class="card">
-        <p class="eyebrow">1-qadam</p>
-        <h3 style="margin-top:8px;font-size:19px">Gaplashamiz</h3>
-        <p style="color:var(--ink-soft);font-size:14.5px;margin-top:6px">Do'koningiz haqida so'rayman va nima kerakligini aniqlaymiz</p>
+    <div style="margin-bottom:32px">
+      <div class="stall" data-reveal>
+        <div class="stall-no">01</div>
+        <div>
+          <h3>Gaplashamiz</h3>
+          <p style="color:var(--ink-2);margin-top:6px">Do'koningiz haqida so'rayman va nima kerakligini aniqlaymiz.</p>
+        </div>
       </div>
-      <div class="card">
-        <p class="eyebrow">2-qadam</p>
-        <h3 style="margin-top:8px;font-size:19px">Sozlaymiz</h3>
-        <p style="color:var(--ink-soft);font-size:14.5px;margin-top:6px">Bot, menyu, filiallar va xodimlar — hammasini men tayyorlab beraman</p>
+
+      <div class="stall" data-reveal>
+        <div class="stall-no">02</div>
+        <div>
+          <h3>Sozlaymiz</h3>
+          <p style="color:var(--ink-2);margin-top:6px">Bot, menyu, filiallar va xodimlar &mdash; hammasini men tayyorlab beraman.</p>
+        </div>
       </div>
-      <div class="card">
-        <p class="eyebrow">3-qadam</p>
-        <h3 style="margin-top:8px;font-size:19px">Ishga tushadi</h3>
-        <p style="color:var(--ink-soft);font-size:14.5px;margin-top:6px">Xodimlaringizga ko'rsataman, keyin ham yordam beraman</p>
+
+      <div class="stall" data-reveal>
+        <div class="stall-no">03</div>
+        <div>
+          <h3>Ishga tushadi</h3>
+          <p style="color:var(--ink-2);margin-top:6px">Xodimlaringizga ko'rsataman, keyin ham yordam beraman.</p>
+        </div>
       </div>
     </div>
 
@@ -264,24 +300,26 @@
 
     <div class="note" data-reveal style="margin-top:26px;max-width:64ch">
       <strong>Sinab ko'rmoqchimisiz?</strong>
-      Yozing — ishlab turgan do'konni ko'rsataman. Buyurtma berib, kassa va
+      Yozing &mdash; ishlab turgan do'konni ko'rsataman. Buyurtma berib, kassa va
       kuryer tomonini o'z ko'zingiz bilan ko'rasiz.
     </div>
   </div>
 </section>
 
+<div class="awning"></div>
+
 <footer>
   <div class="wrap foot-in">
-    <span>© <span id="yil">2026</span> ASL SMM</span>
+    <span>&copy; <span id="yil">2026</span> ASL SMM</span>
     <div class="foot-links">
-      <a href="/">Bosh sahifa</a>
-      <a href="/#proektlar">Proektlarim</a>
+      <a href="https://aslsmm.uz/">Bosh sahifa</a>
+      <a href="https://aslsmm.uz/#proektlar">Proektlarim</a>
       <a href="https://t.me/asilbek77738">Telegram</a>
       <a href="tel:+998947377090">+998 94 737 70 90</a>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=202608190917"></script>
 </body>
 </html>
