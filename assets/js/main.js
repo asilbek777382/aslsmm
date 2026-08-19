@@ -1,56 +1,67 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+/* Ochilish harakati — bo'lim ekranga kirganda bir marta.
+   `prefers-reduced-motion` yoqilgan bo'lsa umuman ishlamaydi:
+   harakat bezak, kerak bo'lsa usiz ham hammasi o'qiladi. */
+(function () {
+  var items = document.querySelectorAll("[data-reveal]");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const navToggle = document.getElementById('nav-toggle');
-const menu = document.getElementById('menu');
+  if (reduced || !("IntersectionObserver" in window)) return; // hammasi ko'rinib turaveradi
 
-navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('open');
-  menu.classList.toggle('open');
-});
+  // Sinf SHU YERDA qo'yiladi: undan oldin mazmun ko'rinib turadi, ya'ni
+  // skript yuklanmasa ham sahifa o'qiladi
+  document.documentElement.classList.add("js-reveal");
 
-menu.querySelectorAll('.menu-link').forEach((link) => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('open');
-    menu.classList.remove('open');
+  // Zaxira: kuzatuvchi biror sababga ko'ra ishlamasa 1.2 soniyadan keyin
+  // hammasi baribir ochiladi — sahifa hech qachon bo'sh qolmaydi
+  setTimeout(function () {
+    items.forEach(function (el) { el.classList.add("in"); });
+  }, 1200);
+
+  var seen = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("in");
+      seen.unobserve(entry.target); // bir marta — qayta-qayta miltillamasin
+    });
+  }, { rootMargin: "0px 0px -12% 0px" });
+
+  items.forEach(function (el, i) {
+    // Kichik kechikish: bir qatordagi kartalar ketma-ket chiqadi
+    el.style.transitionDelay = (i % 4) * 60 + "ms";
+    seen.observe(el);
   });
-});
+})();
 
-const navLinks = document.querySelectorAll('[data-nav]');
-const sections = [...navLinks].map((link) => document.querySelector(link.getAttribute('href')));
+/* Yil — qo'lda yangilab yurmaslik uchun */
+(function () {
+  var yil = document.getElementById("yil");
+  if (yil) yil.textContent = String(new Date().getFullYear());
+})();
 
-function updateActiveNav() {
-  const scrollPos = window.scrollY + window.innerHeight * 0.35;
-  let currentIndex = 0;
-  sections.forEach((sec, i) => {
-    if (sec && sec.offsetTop <= scrollPos) currentIndex = i;
+/* Menyudagi faol havola — sahifa qaysi bo'limda ekanini ko'rsatadi */
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+  if (!links.length || !("IntersectionObserver" in window)) return;
+
+  var map = {};
+  links.forEach(function (a) {
+    var el = document.querySelector(a.getAttribute("href"));
+    if (el) map[el.id] = a;
   });
-  navLinks.forEach((link, i) => link.classList.toggle('active', i === currentIndex));
-}
-window.addEventListener('scroll', updateActiveNav, { passive: true });
-updateActiveNav();
 
-const toTop = document.querySelector('.to-top');
-if (toTop) {
-  window.addEventListener('scroll', () => {
-    toTop.classList.toggle('visible', window.scrollY > 500);
-  }, { passive: true });
-}
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var link = map[entry.target.id];
+      if (!link) return;
       if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        observer.unobserve(entry.target);
+        links.forEach(function (a) { a.classList.remove("is-active"); });
+        link.classList.add("is-active");
       }
     });
-  },
-  { threshold: 0.15 }
-);
-document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
+  }, { rootMargin: "-45% 0px -50% 0px" });
 
-if (window.VanillaTilt) {
-  VanillaTilt.init(document.querySelectorAll('[data-tilt]'), {
-    glare: false,
+  Object.keys(map).forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) spy.observe(el);
   });
-}
+})();
