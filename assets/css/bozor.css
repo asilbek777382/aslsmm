@@ -124,6 +124,7 @@ h3 { font-size: clamp(18px, 2vw, 22px); letter-spacing: -.012em; }
 /* --- Navigatsiya ------------------------------------------------------ */
 .nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .nav-in { display: flex; align-items: center; gap: 16px; height: 60px; }
+.brand-logo { width: 32px; height: 32px; flex: none; }
 .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: -.02em; }
 .brand-mark { width: 24px; height: 24px; border-radius: 5px; background: var(--saffron); display: grid; place-items: center; color: #241A12; font-size: 13px; font-weight: 800; flex: none; }
 .nav-links { margin-left: auto; display: flex; gap: 4px; align-items: center; }

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <title>ASL SMM</title>
+  <defs>
+    <linearGradient id="za" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3B04D"/><stop offset="1" stop-color="#D9780F"/></linearGradient>
+    <linearGradient id="qo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3A2B1E"/><stop offset="1" stop-color="#17110B"/></linearGradient>
+  </defs>
+  <rect x="0" y="0" width="60" height="100" rx="18" fill="url(#za)"/>
+  <rect x="64" y="0" width="36" height="48" rx="14" fill="url(#qo)"/>
+  <rect x="64" y="52" width="36" height="48" rx="14" fill="url(#qo)"/>
+  <!-- A -->
+  <path transform="translate(9.5 26) scale(.82)" fill="#241A12" d="M0 60 L19 0 H31 L50 60 H38 L34.2 47.5 H15.8 L12 60 Z M19 37.5 H31 L25 17.5 Z"/>
+  <!-- S -->
+  <path fill="none" stroke="#FBF6EC" stroke-width="5.6" stroke-linecap="butt" stroke-linejoin="round"
+        d="M89.6 20.6 C88.6 17.6 85.6 15.9 82 15.9 C77.6 15.9 74.9 18.2 74.9 21.2 C74.9 24.6 78 25.6 82 26.5 C86.4 27.5 89.6 28.9 89.6 32.6 C89.6 36 86.6 38.3 82 38.3 C77.8 38.3 74.9 36.4 74 33.2"/>
+  <!-- L -->
+  <path fill="#F3B04D" d="M75 66 H80.8 V84.2 H90.4 V89.4 H75 Z"/>
+</svg>
